@@ -1,0 +1,5 @@
+{
+  "name": "Quiz Spaced Repetition",
+  "description": "Un'applicazione di quiz intelligente che utilizza la ripetizione dilazionata per ottimizzare l'apprendimento, concentrandosi sulle lacune dell'utente.",
+  "requestFramePermissions": []
+}
