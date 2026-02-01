@@ -132,13 +132,8 @@ export const questions: Question[] = [
       "Verificare la presenza di un computer connesso ad una rete.",
       "Misurare il tempo impiegato da un pacchetto di dati",
       "Geolocalizzare un indirizzo IP di un computer connesso ad una rete",
-      "Quale, tra le seguenti affermazioni, sull’indirizzo IP 10.0.0.1 è falsa?",
-      "E' un indirizzo privato",
-      "Non può essere assegnato ad un router.",
-      "Può essere assegnato ad hardware di rete",
-      "Può essere assegnato ad un dispositivo client di rete"
     ],
-    "correctIndex": 6
+    "correctIndex": 3
   },
   {
     "id": 13,
@@ -1920,5 +1915,16 @@ export const questions: Question[] = [
       "DHCP"
     ],
     "correctIndex": 3
-  }
+  },
+  {
+    "id": 174,
+    "questions" : "Quale, tra le seguenti affermazioni, sull’indirizzo IP 10.0.0.1 è falsa?",
+    "options": [
+      "E' un indirizzo privato",
+      "Non può essere assegnato ad un router.",
+      "Può essere assegnato ad hardware di rete",
+      "Può essere assegnato ad un dispositivo client di rete"
+      ],
+    "correctIndex": 1
+  }  
 ]
