@@ -185,12 +185,8 @@ export const questions: Question[] = [
       "2^8",
       "2^32",
       "2^7",
-      "Rete di classe B. Indicare il numero di reti e di indirizzi (host) per rete.",
-      "Numero di reti: 2^21; Host: 2^8",
-      "Numero di reti: 2^14; Host: 2^16",
-      "Numero di reti: 2^7; Host: 2^24"
     ],
-    "correctIndex": 6
+    "correctIndex": 2
   },
   {
     "id": 18,
@@ -200,13 +196,8 @@ export const questions: Question[] = [
       "Un broadcast richiede una risposta da tutti.",
       "L'informazione non deve essere trasmessa più volte.",
       "Un broadcast richiede l'indirizzo del destinatario",
-      "L'indirizzo IP 192.168.4.103 è...",
-      "Un host accessibile in Internet.",
-      "Un indirizzo di rete locale, classe C",
-      "Un indirizzo di rete locale, classe A.",
-      "Un indirizzo di loopback."
     ],
-    "correctIndex": 6
+    "correctIndex": 0
   },
   {
     "id": 19,
@@ -1926,5 +1917,26 @@ export const questions: Question[] = [
       "Può essere assegnato ad un dispositivo client di rete"
       ],
     "correctIndex": 1
-  }  
+  },
+    {
+    "id": 175,
+    "question": "Rete di classe B. Indicare il numero di reti e di indirizzi (host) per rete.",
+    "options": [
+      "Numero di reti: 2^21; Host: 2^8",
+      "Numero di reti: 2^14; Host: 2^16",
+      "Numero di reti: 2^7; Host: 2^24"
+    ],
+    "correctIndex": 2
+  },
+      {
+    "id": 18,
+    "question": "L'indirizzo IP 192.168.4.103 è...",,
+    "options": [
+      "Un host accessibile in Internet.",
+      "Un indirizzo di rete locale, classe C",
+      "Un indirizzo di rete locale, classe A.",
+      "Un indirizzo di loopback."
+    ],
+    "correctIndex": 6
+  },
 ]
