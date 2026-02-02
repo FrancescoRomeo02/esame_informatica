@@ -1317,13 +1317,8 @@ export const questions: Question[] = [
       "La firma avanzata richiede un dispositivo sicuro per la creazione di firme, mentre la firma qualificata no.",
       "La firma qualificata ha lo stesso valore legale di una firma autografa, mentre la firma avanzata no",
       "La firma qualificata è meno sicura rispetto alla firma avanzata.",
-      "Quale tra queste affermazioni sulla codifica dei caratteri è corretta?",
-      "UTF-8 è una codifica a 7 bit.",
-      "ASCII non codifica solo caratteri in lingua inglese.",
-      "EBCDIC è più recente di Unicode.",
-      "Unicode è in grado di rappresentare tutti i caratteri di tutte le lingue"
     ],
-    "correctIndex": 8
+    "correctIndex": 2
   },
   {
     "id": 121,
@@ -1434,7 +1429,7 @@ export const questions: Question[] = [
   },
   {
     "id": 131,
-    "question": "Quali sono i primi 3 bit dell’indirizzo IP di classe C? (non sicura)",
+    "question": "Quali sono i primi 3 bit dell’indirizzo IP di classe C?",
     "options": [
       "10",
       "1",
@@ -1927,7 +1922,7 @@ export const questions: Question[] = [
       "Un indirizzo di rete locale, classe A.",
       "Un indirizzo di loopback."
     ],
-    "correctIndex": 6
+    "correctIndex": 1
   },
   {
     "id": 177,
@@ -1949,5 +1944,16 @@ export const questions: Question[] = [
       "La chiave di decifratura è uguale a quella di cifratura, o facilmente derivabile da quest'ultima"
     ],
     "correctIndex": 0
+  },
+    {
+    "id": 120,
+    "question": "Quale tra queste affermazioni sulla codifica dei caratteri è corretta?",
+    "options": [
+      "UTF-8 è una codifica a 7 bit.",
+      "ASCII non codifica solo caratteri in lingua inglese.",
+      "EBCDIC è più recente di Unicode.",
+      "Unicode è in grado di rappresentare tutti i caratteri di tutte le lingue"
+    ],
+    "correctIndex": 3
   },
 ]
