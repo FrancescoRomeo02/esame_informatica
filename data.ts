@@ -1941,7 +1941,7 @@ export const questions: Question[] = [
   },
     {
     "id": 178,
-      "Nella crittografia simmetrica...indicare l'affermazione falsa.",
+    "question": "Nella crittografia simmetrica...indicare l'affermazione falsa.",
     "options": [
       "Uno dei principali vantaggi della crittografia a chiave simmetrica è che le parti abbiano accesso alla chiave segreta",
       "Le chiavi sono condivise tra le parti",
