@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Question } from '../types';
 
+// CONFIGURAZIONE: Inserisci qui il tuo username/repo di GitHub
+const GITHUB_REPO = "FrancescoRomeo02/esame_informatica";
+
 interface QuizProps {
   question: Question;
   onAnswer: (questionId: number, isCorrect: boolean) => void;
   onExit: () => void;
+  currentIndex?: number;
+  totalQuestions?: number;
 }
 
-export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit }) => {
+export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentIndex, totalQuestions }) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   // Reset state when question changes
@@ -46,23 +51,68 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit }) => {
     return `${baseClass} border-slate-100 bg-slate-50 text-slate-400 opacity-60`;
   };
 
+  const isExamMode = typeof currentIndex === 'number' && typeof totalQuestions === 'number';
+
+  // Costruzione URL GitHub Issue
+  const issueTitle = encodeURIComponent(`Errore Domanda #${question.id}`);
+  const issueBody = encodeURIComponent(`
+### Segnalazione Errore Domanda #${question.id}
+
+**Testo:**
+${question.question}
+
+**Opzioni:**
+${question.options.map((o, i) => `- [${i === question.correctIndex ? 'x' : ' '}] ${o}`).join('\n')}
+
+**Descrizione dell'errore:**
+(Descrivi qui cosa c'è che non va...)
+  `.trim());
+
+  const reportUrl = `https://github.com/${GITHUB_REPO}/issues/new?title=${issueTitle}&body=${issueBody}`;
+
   return (
     <div className="flex flex-col h-full max-w-md mx-auto p-4 animate-in fade-in slide-in-from-bottom-4 duration-300">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <button onClick={onExit} className="text-slate-400 hover:text-slate-600">
+        <button onClick={onExit} className="text-slate-400 hover:text-slate-600 transition-colors" title="Esci">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <div className="text-xs font-bold text-slate-300 uppercase tracking-widest">
-            Domanda #{question.id}
+        
+        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+            {isExamMode ? (
+              <span className="text-indigo-600">Domanda {currentIndex + 1} / {totalQuestions}</span>
+            ) : (
+              <span>Domanda #{question.id}</span>
+            )}
         </div>
-        <div className="w-6"></div> {/* Spacer for alignment */}
+
+        {/* Report Issue Button */}
+        <a 
+          href={reportUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-slate-300 hover:text-red-500 transition-colors"
+          title="Segnala un errore in questa domanda su GitHub"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+          </svg>
+        </a>
       </div>
 
+      {isExamMode && (
+         <div className="w-full bg-slate-100 h-1.5 rounded-full mb-6 overflow-hidden">
+             <div 
+                className="bg-indigo-500 h-full transition-all duration-300"
+                style={{ width: `${((currentIndex! + 1) / totalQuestions!) * 100}%` }}
+             ></div>
+         </div>
+      )}
+
       {/* Question */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6 flex-grow-0">
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6 flex-grow-0 relative group">
         <p className="text-lg md:text-xl font-semibold text-slate-800 leading-relaxed">
           {question.question}
         </p>
@@ -87,13 +137,13 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit }) => {
          {isAnswered && (
              <div className="flex flex-col gap-4">
                  <div className={`text-center font-bold ${selectedOption === question.correctIndex ? 'text-green-600' : 'text-red-500'}`}>
-                     {selectedOption === question.correctIndex ? 'Corretto! Ottimo lavoro.' : 'Sbagliato. Rivediamolo presto.'}
+                     {selectedOption === question.correctIndex ? 'Corretto!' : 'Sbagliato.'}
                  </div>
                  <button 
                     onClick={handleNext}
                     className="w-full py-4 bg-slate-900 text-white font-bold rounded-xl shadow-lg hover:bg-slate-800 transition-transform active:scale-95"
                  >
-                    Prossima Domanda
+                    {isExamMode && currentIndex === totalQuestions! - 1 ? 'Termina Esame' : 'Prossima Domanda'}
                  </button>
              </div>
          )}

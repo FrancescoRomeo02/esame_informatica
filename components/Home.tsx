@@ -6,11 +6,12 @@ import { clearProgress } from '../services/storageService';
 interface HomeProps {
   questions: Question[];
   progress: Record<number, QuestionState>;
-  onStart: () => void;
+  onStartSRS: () => void;
+  onStartExam: () => void;
   onReset: () => void;
 }
 
-export const Home: React.FC<HomeProps> = ({ questions, progress, onStart, onReset }) => {
+export const Home: React.FC<HomeProps> = ({ questions, progress, onStartSRS, onStartExam, onReset }) => {
   const stats = getStats(questions, progress);
 
   const handleReset = () => {
@@ -24,7 +25,7 @@ export const Home: React.FC<HomeProps> = ({ questions, progress, onStart, onRese
     <div className="flex flex-col items-center w-full max-w-md mx-auto p-6 space-y-8 animate-fade-in">
       <div className="text-center space-y-2">
         <h1 className="text-4xl font-extrabold text-slate-800 tracking-tight">Quiz SRS</h1>
-        <p className="text-slate-500">Apprendimento a ripetizione spaziata</p>
+        <p className="text-slate-500">Apprendimento intelligente & Simulazioni</p>
       </div>
 
       {/* Stats Cards */}
@@ -57,10 +58,19 @@ export const Home: React.FC<HomeProps> = ({ questions, progress, onStart, onRese
       {/* Actions */}
       <div className="w-full space-y-4">
         <button 
-          onClick={onStart}
-          className="w-full py-4 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+          onClick={onStartSRS}
+          className="w-full py-4 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
         >
-          Avvia Quiz
+          <span>Continua Apprendimento</span>
+          <span className="bg-blue-500 text-xs py-0.5 px-2 rounded-md">SRS</span>
+        </button>
+
+        <button 
+          onClick={onStartExam}
+          className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+        >
+          <span>Simulazione Esame</span>
+          <span className="bg-indigo-500 text-xs py-0.5 px-2 rounded-md">31 Domande</span>
         </button>
         
         <button 
