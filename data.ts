@@ -1434,17 +1434,13 @@ export const questions: Question[] = [
   },
   {
     "id": 131,
-    "question": "Quali sono i primi 3 bit dell’indirizzo IP di classe C?",
+    "question": "Quali sono i primi 3 bit dell’indirizzo IP di classe C? (non sicura)",
     "options": [
       "10",
       "1",
       "110",
-      "Se 8 bit = 1 Byte, quale uguaglianza è corretta?",
-      "1 GB = 1024 KB",
-      "1 KB = 1024 Byte",
-      "1 MB = 1024 Byte"
     ],
-    "correctIndex": 5
+    "correctIndex": 2
   },
   {
     "id": 132,
@@ -1686,20 +1682,14 @@ export const questions: Question[] = [
   },
   {
     "id": 154,
-    "question": "Quale delle seguenti affermazioni descrive meglio il concetto di programmazione di un microprocessore in un sistema di elaborazione?",
+    "question": "Quale delle seguenti affermazioni descrive meglio il concetto di programmazione di un microprocessore in un sistema di elaborazione? (da rivedere)",
     "options": [
       "La programmazione di un microprocessore consiste nell'utilizzare un linguaggio di programmazione di alto livello, come C++ o Java, per creare applicazioni complesse che interagiscono con il sistema operativo.",
       "La programmazione di un microprocessore consiste nel progettare e implementare l'architettura interna del microprocessore, definendo i registri, le unità logiche e aritmetiche e il sistema di controllo.",
       "La programmazione di un microprocessore consiste nel configurare l'hardware del sistema, come la memoria e le periferiche, per farle funzionare correttamente.",
       "La programmazione di un microprocessore consiste nello scrivere una serie di istruzioni, chiamate codice macchina o assembly, che il microprocessore è in grado di eseguire per svolgere un determinato compito.",
-      "Domanda 3 Domanda 3 Domanda",
-      "Nella crittografia simmetrica...indicare l'affermazione falsa.",
-      "Uno dei principali vantaggi della crittografia a chiave simmetrica è che le parti abbiano accesso alla chiave segreta",
-      "Le chiavi sono condivise tra le parti",
-      "L'algoritmo di cifratura è molto performante e semplice da implementare",
-      "La chiave di decifratura è uguale a quella di cifratura, o facilmente derivabile da quest'ultima"
     ],
-    "correctIndex": 6
+    "correctIndex": 0
   },
   {
     "id": 155,
@@ -1928,8 +1918,8 @@ export const questions: Question[] = [
     ],
     "correctIndex": 2
   },
-      {
-    "id": 18,
+  {
+    "id": 176,
     "question": "L'indirizzo IP 192.168.4.103 è...",,
     "options": [
       "Un host accessibile in Internet.",
@@ -1938,5 +1928,26 @@ export const questions: Question[] = [
       "Un indirizzo di loopback."
     ],
     "correctIndex": 6
+  },
+  {
+    "id": 177,
+    "question": "Se 8 bit = 1 Byte, quale uguaglianza è corretta?",
+    "options": [
+      "1 GB = 1024 KB",
+      "1 KB = 1024 Byte",
+      "1 MB = 1024 Byte"
+      ],
+     "correctIndex": 1
+  },
+    {
+    "id": 178,
+      "Nella crittografia simmetrica...indicare l'affermazione falsa.",
+    "options": [
+      "Uno dei principali vantaggi della crittografia a chiave simmetrica è che le parti abbiano accesso alla chiave segreta",
+      "Le chiavi sono condivise tra le parti",
+      "L'algoritmo di cifratura è molto performante e semplice da implementare",
+      "La chiave di decifratura è uguale a quella di cifratura, o facilmente derivabile da quest'ultima"
+    ],
+    "correctIndex": 0
   },
 ]
