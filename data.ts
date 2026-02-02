@@ -1920,7 +1920,7 @@ export const questions: Question[] = [
   },
   {
     "id": 176,
-    "question": "L'indirizzo IP 192.168.4.103 è...",,
+    "question": "L'indirizzo IP 192.168.4.103 è...",
     "options": [
       "Un host accessibile in Internet.",
       "Un indirizzo di rete locale, classe C",
