@@ -229,7 +229,7 @@ export const questions: Question[] = [
       "5",
       "4"
     ],
-    "correctIndex": -1
+    "correctIndex": 2
   },
   {
     "id": 22,
@@ -368,7 +368,7 @@ export const questions: Question[] = [
       "Domain Name Server. È il sistema che associa nomi alfabetici a indirizzi IP.",
       "Domain Name System. È il sistema che associa nomi alfabetici a indirizzi IP.",
       "Domain Name Service. È il sistema che associa nomi alfabetici a indirizzi IP.",
-      "Default Name System.  È il sistema che associa nomi alfabetici a indirizzi IP."
+      "Default Name System. È il sistema che associa nomi alfabetici a indirizzi IP."
     ],
     "correctIndex": 1
   },
@@ -400,13 +400,8 @@ export const questions: Question[] = [
       "https://www.icann.org/",
       "https://www.w3.org/",
       "https://www.nic.it/it",
-      "Che cosa fa la RA (Registration Authority) italiana?",
-      "Assegna i nomi di dominio",
-      "Assegna i nomi di dominio .IT",
-      "Assegna i nomi di dominio .IT e gestisce gli IP italiani.",
-      "Assegna i nomi di dominio alle persone fisiche."
     ],
-    "correctIndex": 5
+    "correctIndex": 2
   },
   {
     "id": 38,
@@ -482,18 +477,8 @@ export const questions: Question[] = [
       "Eset Antivirus",
       "Microsoft Windows 7",
       "Microsoft Word 2013",
-      "Quale tra questi tipi di bus non esiste?",
-      "Bus dati",
-      "Bus indirizzi",
-      "Bus di controllo i/o",
-      "Bus di controllo",
-      "Che cosa utilizzano i principali componenti interni di un PC per scambiarsi dati?",
-      "Le interfacce di ingresso e uscita",
-      "Il firmware",
-      "Il bus",
-      "I cavi dell'alimentazione"
     ],
-    "correctIndex": 12
+    "correctIndex": 2
   },
   {
     "id": 45,
@@ -1350,7 +1335,7 @@ export const questions: Question[] = [
       "Bus o ring indifferentemente",
       "Ring"
     ],
-    "correctIndex": -1
+    "correctIndex": 1
   },
   {
     "id": 124,
@@ -1894,7 +1879,7 @@ export const questions: Question[] = [
   },
   {
     "id": 174,
-    "questions" : "Quale, tra le seguenti affermazioni, sull’indirizzo IP 10.0.0.1 è falsa?",
+    "question" : "Quale, tra le seguenti affermazioni, sull’indirizzo IP 10.0.0.1 è falsa?",
     "options": [
       "E' un indirizzo privato",
       "Non può essere assegnato ad un router.",
@@ -1955,5 +1940,38 @@ export const questions: Question[] = [
       "Unicode è in grado di rappresentare tutti i caratteri di tutte le lingue"
     ],
     "correctIndex": 3
+  },
+    {
+    "id": 180,
+    "question": "Che cosa fa la RA (Registration Authority) italiana?",
+    "options": [
+      "Assegna i nomi di dominio",
+      "Assegna i nomi di dominio .IT",
+      "Assegna i nomi di dominio .IT e gestisce gli IP italiani.",
+      "Assegna i nomi di dominio alle persone fisiche."
+    ],
+    "correctIndex": 1
+  },
+    {
+    "id": 181,
+    "question": "Quale tra questi tipi di bus non esiste?",
+    "options": [
+      "Bus dati",
+      "Bus indirizzi",
+      "Bus di controllo i/o",
+      "Bus di controllo",
+    ],
+    "correctIndex": 2
+  },
+      {
+    "id": 182,
+    "question": "Che cosa utilizzano i principali componenti interni di un PC per scambiarsi dati?",,
+    "options": [
+      "Le interfacce di ingresso e uscita",
+      "Il firmware",
+      "Il bus",
+      "I cavi dell'alimentazione"
+    ],
+    "correctIndex": 2
   },
 ]
