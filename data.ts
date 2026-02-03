@@ -132,13 +132,8 @@ export const questions: Question[] = [
       "Verificare la presenza di un computer connesso ad una rete.",
       "Misurare il tempo impiegato da un pacchetto di dati",
       "Geolocalizzare un indirizzo IP di un computer connesso ad una rete",
-      "Quale, tra le seguenti affermazioni, sull’indirizzo IP 10.0.0.1 è falsa?",
-      "E' un indirizzo privato",
-      "Non può essere assegnato ad un router.",
-      "Può essere assegnato ad hardware di rete",
-      "Può essere assegnato ad un dispositivo client di rete"
     ],
-    "correctIndex": 6
+    "correctIndex": 3
   },
   {
     "id": 13,
@@ -190,12 +185,8 @@ export const questions: Question[] = [
       "2^8",
       "2^32",
       "2^7",
-      "Rete di classe B. Indicare il numero di reti e di indirizzi (host) per rete.",
-      "Numero di reti: 2^21; Host: 2^8",
-      "Numero di reti: 2^14; Host: 2^16",
-      "Numero di reti: 2^7; Host: 2^24"
     ],
-    "correctIndex": 6
+    "correctIndex": 2
   },
   {
     "id": 18,
@@ -205,13 +196,8 @@ export const questions: Question[] = [
       "Un broadcast richiede una risposta da tutti.",
       "L'informazione non deve essere trasmessa più volte.",
       "Un broadcast richiede l'indirizzo del destinatario",
-      "L'indirizzo IP 192.168.4.103 è...",
-      "Un host accessibile in Internet.",
-      "Un indirizzo di rete locale, classe C",
-      "Un indirizzo di rete locale, classe A.",
-      "Un indirizzo di loopback."
     ],
-    "correctIndex": 6
+    "correctIndex": 0
   },
   {
     "id": 19,
@@ -243,7 +229,7 @@ export const questions: Question[] = [
       "5",
       "4"
     ],
-    "correctIndex": -1
+    "correctIndex": 2
   },
   {
     "id": 22,
@@ -382,7 +368,7 @@ export const questions: Question[] = [
       "Domain Name Server. È il sistema che associa nomi alfabetici a indirizzi IP.",
       "Domain Name System. È il sistema che associa nomi alfabetici a indirizzi IP.",
       "Domain Name Service. È il sistema che associa nomi alfabetici a indirizzi IP.",
-      "Default Name System.  È il sistema che associa nomi alfabetici a indirizzi IP."
+      "Default Name System. È il sistema che associa nomi alfabetici a indirizzi IP."
     ],
     "correctIndex": 1
   },
@@ -414,13 +400,8 @@ export const questions: Question[] = [
       "https://www.icann.org/",
       "https://www.w3.org/",
       "https://www.nic.it/it",
-      "Che cosa fa la RA (Registration Authority) italiana?",
-      "Assegna i nomi di dominio",
-      "Assegna i nomi di dominio .IT",
-      "Assegna i nomi di dominio .IT e gestisce gli IP italiani.",
-      "Assegna i nomi di dominio alle persone fisiche."
     ],
-    "correctIndex": 5
+    "correctIndex": 2
   },
   {
     "id": 38,
@@ -496,18 +477,8 @@ export const questions: Question[] = [
       "Eset Antivirus",
       "Microsoft Windows 7",
       "Microsoft Word 2013",
-      "Quale tra questi tipi di bus non esiste?",
-      "Bus dati",
-      "Bus indirizzi",
-      "Bus di controllo i/o",
-      "Bus di controllo",
-      "Che cosa utilizzano i principali componenti interni di un PC per scambiarsi dati?",
-      "Le interfacce di ingresso e uscita",
-      "Il firmware",
-      "Il bus",
-      "I cavi dell'alimentazione"
     ],
-    "correctIndex": 12
+    "correctIndex": 2
   },
   {
     "id": 45,
@@ -1331,13 +1302,8 @@ export const questions: Question[] = [
       "La firma avanzata richiede un dispositivo sicuro per la creazione di firme, mentre la firma qualificata no.",
       "La firma qualificata ha lo stesso valore legale di una firma autografa, mentre la firma avanzata no",
       "La firma qualificata è meno sicura rispetto alla firma avanzata.",
-      "Quale tra queste affermazioni sulla codifica dei caratteri è corretta?",
-      "UTF-8 è una codifica a 7 bit.",
-      "ASCII non codifica solo caratteri in lingua inglese.",
-      "EBCDIC è più recente di Unicode.",
-      "Unicode è in grado di rappresentare tutti i caratteri di tutte le lingue"
     ],
-    "correctIndex": 8
+    "correctIndex": 2
   },
   {
     "id": 121,
@@ -1369,7 +1335,7 @@ export const questions: Question[] = [
       "Bus o ring indifferentemente",
       "Ring"
     ],
-    "correctIndex": -1
+    "correctIndex": 1
   },
   {
     "id": 124,
@@ -1453,12 +1419,8 @@ export const questions: Question[] = [
       "10",
       "1",
       "110",
-      "Se 8 bit = 1 Byte, quale uguaglianza è corretta?",
-      "1 GB = 1024 KB",
-      "1 KB = 1024 Byte",
-      "1 MB = 1024 Byte"
     ],
-    "correctIndex": 5
+    "correctIndex": 2
   },
   {
     "id": 132,
@@ -1700,20 +1662,14 @@ export const questions: Question[] = [
   },
   {
     "id": 154,
-    "question": "Quale delle seguenti affermazioni descrive meglio il concetto di programmazione di un microprocessore in un sistema di elaborazione?",
+    "question": "Quale delle seguenti affermazioni descrive meglio il concetto di programmazione di un microprocessore in un sistema di elaborazione? (da rivedere)",
     "options": [
       "La programmazione di un microprocessore consiste nell'utilizzare un linguaggio di programmazione di alto livello, come C++ o Java, per creare applicazioni complesse che interagiscono con il sistema operativo.",
       "La programmazione di un microprocessore consiste nel progettare e implementare l'architettura interna del microprocessore, definendo i registri, le unità logiche e aritmetiche e il sistema di controllo.",
       "La programmazione di un microprocessore consiste nel configurare l'hardware del sistema, come la memoria e le periferiche, per farle funzionare correttamente.",
       "La programmazione di un microprocessore consiste nello scrivere una serie di istruzioni, chiamate codice macchina o assembly, che il microprocessore è in grado di eseguire per svolgere un determinato compito.",
-      "Domanda 3 Domanda 3 Domanda",
-      "Nella crittografia simmetrica...indicare l'affermazione falsa.",
-      "Uno dei principali vantaggi della crittografia a chiave simmetrica è che le parti abbiano accesso alla chiave segreta",
-      "Le chiavi sono condivise tra le parti",
-      "L'algoritmo di cifratura è molto performante e semplice da implementare",
-      "La chiave di decifratura è uguale a quella di cifratura, o facilmente derivabile da quest'ultima"
     ],
-    "correctIndex": 6
+    "correctIndex": 0
   },
   {
     "id": 155,
@@ -1920,5 +1876,102 @@ export const questions: Question[] = [
       "DHCP"
     ],
     "correctIndex": 3
-  }
+  },
+  {
+    "id": 174,
+    "question" : "Quale, tra le seguenti affermazioni, sull’indirizzo IP 10.0.0.1 è falsa?",
+    "options": [
+      "E' un indirizzo privato",
+      "Non può essere assegnato ad un router.",
+      "Può essere assegnato ad hardware di rete",
+      "Può essere assegnato ad un dispositivo client di rete"
+      ],
+    "correctIndex": 1
+  },
+    {
+    "id": 175,
+    "question": "Rete di classe B. Indicare il numero di reti e di indirizzi (host) per rete.",
+    "options": [
+      "Numero di reti: 2^21; Host: 2^8",
+      "Numero di reti: 2^14; Host: 2^16",
+      "Numero di reti: 2^7; Host: 2^24"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": 176,
+    "question": "L'indirizzo IP 192.168.4.103 è...",
+    "options": [
+      "Un host accessibile in Internet.",
+      "Un indirizzo di rete locale, classe C",
+      "Un indirizzo di rete locale, classe A.",
+      "Un indirizzo di loopback."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": 177,
+    "question": "Se 8 bit = 1 Byte, quale uguaglianza è corretta?",
+    "options": [
+      "1 GB = 1024 KB",
+      "1 KB = 1024 Byte",
+      "1 MB = 1024 Byte"
+      ],
+     "correctIndex": 1
+  },
+    {
+    "id": 178,
+    "question": "Nella crittografia simmetrica...indicare l'affermazione falsa.",
+    "options": [
+      "Uno dei principali vantaggi della crittografia a chiave simmetrica è che le parti abbiano accesso alla chiave segreta",
+      "Le chiavi sono condivise tra le parti",
+      "L'algoritmo di cifratura è molto performante e semplice da implementare",
+      "La chiave di decifratura è uguale a quella di cifratura, o facilmente derivabile da quest'ultima"
+    ],
+    "correctIndex": 0
+  },
+    {
+    "id": 179,
+    "question": "Quale tra queste affermazioni sulla codifica dei caratteri è corretta?",
+    "options": [
+      "UTF-8 è una codifica a 7 bit.",
+      "ASCII non codifica solo caratteri in lingua inglese.",
+      "EBCDIC è più recente di Unicode.",
+      "Unicode è in grado di rappresentare tutti i caratteri di tutte le lingue"
+    ],
+    "correctIndex": 3
+  },
+    {
+    "id": 180,
+    "question": "Che cosa fa la RA (Registration Authority) italiana?",
+    "options": [
+      "Assegna i nomi di dominio",
+      "Assegna i nomi di dominio .IT",
+      "Assegna i nomi di dominio .IT e gestisce gli IP italiani.",
+      "Assegna i nomi di dominio alle persone fisiche."
+    ],
+    "correctIndex": 1
+  },
+    {
+    "id": 181,
+    "question": "Quale tra questi tipi di bus non esiste?",
+    "options": [
+      "Bus dati",
+      "Bus indirizzi",
+      "Bus di controllo i/o",
+      "Bus di controllo",
+    ],
+    "correctIndex": 2
+  },
+      {
+    "id": 182,
+    "question": "Che cosa utilizzano i principali componenti interni di un PC per scambiarsi dati?",
+    "options": [
+      "Le interfacce di ingresso e uscita",
+      "Il firmware",
+      "Il bus",
+      "I cavi dell'alimentazione"
+    ],
+    "correctIndex": 2
+  },
 ]
