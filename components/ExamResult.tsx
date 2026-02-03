@@ -3,11 +3,20 @@ import React from 'react';
 interface ExamResultProps {
   score: number;
   total: number;
+  mistakesCount: number;
   onHome: () => void;
   onRetry: () => void;
+  onReviewMistakes: () => void;
 }
 
-export const ExamResult: React.FC<ExamResultProps> = ({ score, total, onHome, onRetry }) => {
+export const ExamResult: React.FC<ExamResultProps> = ({ 
+  score, 
+  total, 
+  mistakesCount, 
+  onHome, 
+  onRetry, 
+  onReviewMistakes 
+}) => {
   const percentage = Math.round((score / total) * 100);
   
   let message = "";
@@ -47,6 +56,15 @@ export const ExamResult: React.FC<ExamResultProps> = ({ score, total, onHome, on
       </div>
 
       <div className="w-full space-y-3">
+        {mistakesCount > 0 && (
+          <button 
+            onClick={onReviewMistakes}
+            className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg shadow-orange-200 transition-transform active:scale-95 mb-2"
+          >
+            Ripassa {mistakesCount} Errori
+          </button>
+        )}
+
         <button 
           onClick={onRetry}
           className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg transition-transform active:scale-95"

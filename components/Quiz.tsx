@@ -10,9 +10,10 @@ interface QuizProps {
   onExit: () => void;
   currentIndex?: number;
   totalQuestions?: number;
+  headerText?: string;
 }
 
-export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentIndex, totalQuestions }) => {
+export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentIndex, totalQuestions, headerText }) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   // Reset state when question changes
@@ -81,7 +82,9 @@ ${question.options.map((o, i) => `- [${i === question.correctIndex ? 'x' : ' '}]
         </button>
         
         <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-            {isExamMode ? (
+            {headerText ? (
+                <span className="text-orange-500">{headerText}</span>
+            ) : isExamMode ? (
               <span className="text-indigo-600">Domanda {currentIndex + 1} / {totalQuestions}</span>
             ) : (
               <span>Domanda #{question.id}</span>
@@ -102,7 +105,7 @@ ${question.options.map((o, i) => `- [${i === question.correctIndex ? 'x' : ' '}]
         </a>
       </div>
 
-      {isExamMode && (
+      {isExamMode && !headerText && (
          <div className="w-full bg-slate-100 h-1.5 rounded-full mb-6 overflow-hidden">
              <div 
                 className="bg-indigo-500 h-full transition-all duration-300"
@@ -143,7 +146,7 @@ ${question.options.map((o, i) => `- [${i === question.correctIndex ? 'x' : ' '}]
                     onClick={handleNext}
                     className="w-full py-4 bg-slate-900 text-white font-bold rounded-xl shadow-lg hover:bg-slate-800 transition-transform active:scale-95"
                  >
-                    {isExamMode && currentIndex === totalQuestions! - 1 ? 'Termina Esame' : 'Prossima Domanda'}
+                    {isExamMode && !headerText && currentIndex === totalQuestions! - 1 ? 'Termina Esame' : 'Prossima Domanda'}
                  </button>
              </div>
          )}
