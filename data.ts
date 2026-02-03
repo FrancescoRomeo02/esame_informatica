@@ -493,14 +493,14 @@ export const questions: Question[] = [
   },
   {
     "id": 46,
-    "question": "Che cosa accade all'accensione di un computer? (Sequenza BIOS)",
+    "question": "Che cosa accade all'accensione di un computer? (Seleziona la prima operazione che viene svolta)",
     "options": [
       "Il BIOS controlla che componenti essenziali come CPU, RAM e periferiche funzionino correttamente.",
       "il BIOS cerca un dispositivo avviabile (hard disk, SSD, chiavetta USB, есс.).",
       "il BIOS carica nella memoria il bootloader, un piccolo programma che avvia il sistema operativo.",
       "il BIOS \"passa il testimone\" al sistema operativo."
     ],
-    "correctIndex": -1
+    "correctIndex": 0
   },
   {
     "id": 47,

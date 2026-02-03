@@ -1,4 +1,5 @@
 import React from 'react';
+import { BuyCoffeeBanner } from './BuyCoffeeBanner';
 
 interface ExamResultProps {
   score: number;
@@ -34,7 +35,7 @@ export const ExamResult: React.FC<ExamResultProps> = ({
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] w-full max-w-md mx-auto p-6 space-y-8 animate-in zoom-in-95 duration-300">
+    <div className="flex flex-col items-center justify-center min-h-[50vh] w-full max-w-md mx-auto p-6 space-y-8 animate-in zoom-in-95 duration-300 pb-12">
       <div className="text-center space-y-2">
         <h2 className="text-3xl font-bold text-slate-800">Esito Esame</h2>
         <p className="text-slate-500">Ecco come è andata</p>
@@ -65,6 +66,16 @@ export const ExamResult: React.FC<ExamResultProps> = ({
           </button>
         )}
 
+        {/* Tutoring Button - Only shows if failed (< 60%) */}
+        {percentage < 60 && (
+           <a 
+            href="mailto:romeo.francesco.2002@gmail.com?subject=Richiesta%20Ripetizioni%20Informatica&body=Ciao%20Francesco,%20ho%20fatto%20la%20simulazione%20e%20avrei%20bisogno%20di%20una%20mano%20per%20prepararmi%20al%20meglio."
+            className="block w-full py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-lg shadow-teal-200 transition-transform active:scale-95 text-center mb-2"
+          >
+            🎓 Serve aiuto? Chiedimi ripetizioni!
+          </a>
+        )}
+
         <button 
           onClick={onRetry}
           className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg transition-transform active:scale-95"
@@ -78,6 +89,8 @@ export const ExamResult: React.FC<ExamResultProps> = ({
           Torna alla Home
         </button>
       </div>
+
+      <BuyCoffeeBanner className="mt-8" />
     </div>
   );
 };

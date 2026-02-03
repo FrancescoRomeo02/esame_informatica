@@ -2,6 +2,7 @@ import React from 'react';
 import { Question, QuestionState } from '../types';
 import { getStats } from '../services/srsService';
 import { clearProgress } from '../services/storageService';
+import { BuyCoffeeBanner } from './BuyCoffeeBanner';
 
 interface HomeProps {
   questions: Question[];
@@ -22,7 +23,7 @@ export const Home: React.FC<HomeProps> = ({ questions, progress, onStartSRS, onS
   };
 
   return (
-    <div className="flex flex-col items-center w-full max-w-md mx-auto p-6 space-y-8 animate-fade-in">
+    <div className="flex flex-col items-center w-full max-w-md mx-auto p-6 space-y-8 animate-fade-in pb-12">
       <div className="text-center space-y-2">
         <h1 className="text-4xl font-extrabold text-slate-800 tracking-tight">Quiz SRS</h1>
         <p className="text-slate-500">Apprendimento intelligente & Simulazioni</p>
@@ -80,6 +81,8 @@ export const Home: React.FC<HomeProps> = ({ questions, progress, onStartSRS, onS
           Resetta Progressi
         </button>
       </div>
+
+      <BuyCoffeeBanner className="mt-4" />
     </div>
   );
 };
