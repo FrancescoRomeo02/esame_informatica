@@ -1965,7 +1965,7 @@ export const questions: Question[] = [
   },
       {
     "id": 182,
-    "question": "Che cosa utilizzano i principali componenti interni di un PC per scambiarsi dati?",,
+    "question": "Che cosa utilizzano i principali componenti interni di un PC per scambiarsi dati?",
     "options": [
       "Le interfacce di ingresso e uscita",
       "Il firmware",
