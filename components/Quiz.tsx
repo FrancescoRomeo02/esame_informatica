@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Question } from '../types';
 
 // CONFIGURAZIONE: Inserisci qui il tuo username/repo di GitHub
@@ -16,10 +16,34 @@ interface QuizProps {
 export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentIndex, totalQuestions, headerText }) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
+
   // Reset state when question changes
   useEffect(() => {
     setSelectedOption(null);
     setIsAnswered(false);
+  }, [question]);
+
+  // Memoize shuffled options so they don't reshuffle on every render (only when question changes)
+  const { shuffledOptions, shuffledCorrectIndex } = useMemo(() => {
+    // Map options to keep track of their original index
+    const optionsWithIndex = question.options.map((opt, index) => ({
+      text: opt,
+      originalIndex: index
+    }));
+
+    // Fisher-Yates shuffle
+    for (let i = optionsWithIndex.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [optionsWithIndex[i], optionsWithIndex[j]] = [optionsWithIndex[j], optionsWithIndex[i]];
+    }
+
+    // Find where the correct answer moved to
+    const newCorrectIndex = optionsWithIndex.findIndex(item => item.originalIndex === question.correctIndex);
+
+    return {
+      shuffledOptions: optionsWithIndex,
+      shuffledCorrectIndex: newCorrectIndex
+    };
   }, [question]);
 
   const handleOptionClick = (index: number) => {
@@ -30,7 +54,8 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentI
 
   const handleNext = () => {
     if (selectedOption === null) return;
-    const isCorrect = selectedOption === question.correctIndex;
+    // Compare selected index with the calculated correct index in the shuffled array
+    const isCorrect = selectedOption === shuffledCorrectIndex;
     onAnswer(question.id, isCorrect);
   };
 
@@ -41,11 +66,13 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentI
       return `${baseClass} border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50 cursor-pointer text-slate-700`;
     }
 
-    if (index === question.correctIndex) {
+    // Use shuffledCorrectIndex for styling
+    if (index === shuffledCorrectIndex) {
       return `${baseClass} border-green-500 bg-green-50 text-green-800`;
     }
 
-    if (index === selectedOption && index !== question.correctIndex) {
+    // If this option was selected but is wrong
+    if (index === selectedOption && index !== shuffledCorrectIndex) {
       return `${baseClass} border-red-500 bg-red-50 text-red-800`;
     }
 
@@ -54,7 +81,7 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentI
 
   const isExamMode = typeof currentIndex === 'number' && typeof totalQuestions === 'number';
 
-  // Costruzione URL GitHub Issue
+  // Costruzione URL GitHub Issue (usa i dati originali per coerenza nel report)
   const issueTitle = encodeURIComponent(`Errore Domanda #${question.id}`);
   const issueBody = encodeURIComponent(`
 ### Segnalazione Errore Domanda #${question.id}
@@ -62,7 +89,7 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onExit, currentI
 **Testo:**
 ${question.question}
 
-**Opzioni:**
+**Opzioni (Originali):**
 ${question.options.map((o, i) => `- [${i === question.correctIndex ? 'x' : ' '}] ${o}`).join('\n')}
 
 **Descrizione dell'errore:**
@@ -121,16 +148,16 @@ ${question.options.map((o, i) => `- [${i === question.correctIndex ? 'x' : ' '}]
         </p>
       </div>
 
-      {/* Options */}
+      {/* Options (Render shuffled options) */}
       <div className="flex flex-col gap-3 flex-grow">
-        {question.options.map((option, idx) => (
+        {shuffledOptions.map((optionObj, idx) => (
           <button
             key={idx}
             onClick={() => handleOptionClick(idx)}
             className={getOptionClass(idx)}
             disabled={isAnswered}
           >
-            {option}
+            {optionObj.text}
           </button>
         ))}
       </div>
@@ -139,8 +166,8 @@ ${question.options.map((o, i) => `- [${i === question.correctIndex ? 'x' : ' '}]
       <div className={`mt-6 transition-all duration-300 ${isAnswered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
          {isAnswered && (
              <div className="flex flex-col gap-4">
-                 <div className={`text-center font-bold ${selectedOption === question.correctIndex ? 'text-green-600' : 'text-red-500'}`}>
-                     {selectedOption === question.correctIndex ? 'Corretto!' : 'Sbagliato.'}
+                 <div className={`text-center font-bold ${selectedOption === shuffledCorrectIndex ? 'text-green-600' : 'text-red-500'}`}>
+                     {selectedOption === shuffledCorrectIndex ? 'Corretto!' : 'Sbagliato.'}
                  </div>
                  <button 
                     onClick={handleNext}
